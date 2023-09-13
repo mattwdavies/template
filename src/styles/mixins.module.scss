@@ -1,0 +1,36 @@
+@import 'font-tokens';
+
+@function get-font-styles($fontToken) {
+  @if map-has-key($font-tokens, $fontToken) {
+    $fontProps: map-get($font-tokens, $fontToken);
+    @return $fontProps;
+  }
+
+  @else {
+    @warn "Font token #{$fontToken} not found.";
+    @return null;
+  }
+}
+
+@mixin font($fontToken) {
+  $fontStyles: get-font-styles($fontToken);
+
+  @if $fontStyles {
+    font-size: map-get($fontStyles, size);
+    font-weight: map-get($fontStyles, weight);
+    color: map-get($fontStyles, color);
+    font-family: map-get($fontStyles, family);
+  }
+}
+
+@mixin mq-tablet {
+  @media screen and (min-width: 560px) {
+    @content;
+  }
+}
+
+@mixin mq-laptop {
+  @media screen and (min-width: 992px) {
+    @content;
+  }
+}

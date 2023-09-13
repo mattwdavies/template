@@ -1,0 +1,5 @@
+@import './mixins.module.scss'; 
+
+body {
+ @include font('body');  
+}

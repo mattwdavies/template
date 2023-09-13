@@ -1,0 +1,17 @@
+@import '@/styles/mixins.module.scss';
+
+.boo {
+  @include font('boldItalic');  
+}
+
+@include mq-tablet {
+  .boo {
+    @include font('body');
+  }
+}
+
+@include mq-laptop {
+  .boo {
+    @include font('boldItalic');  
+  }
+}

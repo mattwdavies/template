@@ -1,0 +1,25 @@
+@import 'font-variables';
+
+@font-face {
+  font-family: 'regular';
+  src: url($regular) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'black-italic';
+  src: url($black-italic) format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+$body-color: #010101;
+$font-tokens: (
+  body: (size: 16px,
+    family: 'regular',
+    color: $body-color ),
+  boldItalic: (size: 32px,
+    family: 'black-italic',
+  ),
+);
