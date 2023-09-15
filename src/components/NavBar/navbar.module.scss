@@ -1,0 +1,92 @@
+@import '@/styles/mixins.module.scss';
+
+.nav {
+    background-color: #fef7e5;
+}
+
+.navElementsDesktop {
+    display: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menuIcon,
+.logo {
+    cursor: pointer;
+}
+
+
+.navElementsMobile {
+    position: absolute;
+    right: 0;
+    background-image: url('./Untitled.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    height: 100%;
+    width: 0px;
+}
+
+.navElementsMobile.active {
+    width: 270px;
+}
+
+.navElementsMobile ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+.navElementsMobile ul li {
+    margin-right: unset;
+    margin-top: 20px;
+}
+
+.navLink {
+    text-decoration: none;
+    color: $primary
+}
+
+@include mq-tablet {
+
+    .navElementsMobile {
+        display: none;
+    }
+
+    .menuIcon {
+        display: none;
+    }
+
+    .navElementsDesktop {
+        display: block;
+
+    }
+
+    .navElementsDesktop.active {
+        width: auto;
+    }
+
+    .navElementsDesktop ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        margin: 0px;
+
+    }
+
+    .navElementsDesktop ul li {
+        margin-right: 60px;
+    }
+
+    .navElementsDesktop ul a.active::after {
+        content: none;
+    }
+}

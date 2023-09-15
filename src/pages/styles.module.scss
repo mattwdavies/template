@@ -1,7 +1,7 @@
 @import '@/styles/mixins.module.scss';
 
 .boo {
-  @include font('boldItalic');  
+  @include font('boldItalic');
 }
 
 @include mq-tablet {
@@ -12,6 +12,6 @@
 
 @include mq-laptop {
   .boo {
-    @include font('boldItalic');  
+    @include font('boldItalic');
   }
 }

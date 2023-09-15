@@ -24,13 +24,15 @@
 }
 
 @mixin mq-tablet {
-  @media screen and (min-width: 560px) {
+  @media screen and (min-width: 767px) {
     @content;
   }
 }
 
 @mixin mq-laptop {
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: 1024px) {
     @content;
   }
 }
+
+$primary: $body-color;
